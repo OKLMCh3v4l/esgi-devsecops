@@ -7,8 +7,8 @@ resource "aws_vpc" "ci-cd_vpc" {
 }
 
 resource "aws_subnet" "ci-cd_subnet" {
-  vpc_id            = aws_vpc.ci-cd_vpc.id
-  cidr_block        = "10.0.1.0/24"
+  vpc_id     = aws_vpc.ci-cd_vpc.id
+  cidr_block = "10.0.1.0/24"
 
   tags = {
     Name = "ci-cd Subnet"

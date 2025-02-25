@@ -3,8 +3,8 @@
 
 resource "aws_security_group" "ci-cd_sg" {
   description = "Security group to allow SSH and Jenkins + Sonarqube"
-  name   = "HTTP and SSH"
-  vpc_id = aws_vpc.ci-cd_vpc.id
+  name        = "HTTP and SSH"
+  vpc_id      = aws_vpc.ci-cd_vpc.id
 
   ingress {
     description = "Trafic through port 8080"
@@ -13,7 +13,7 @@ resource "aws_security_group" "ci-cd_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   ingress {
     description = "Trafic through port 8090"
     from_port   = 8090
